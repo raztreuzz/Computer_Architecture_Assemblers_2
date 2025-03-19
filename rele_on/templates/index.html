@@ -1,0 +1,20 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='mqtt.min.js') }}"></script>
+    <script  src="{{ url_for('static', filename='node.js') }}"></script>
+
+    <title>Flask Server</title>
+</head>
+<body>
+    <h1>Flask Server</h1>
+    <p>MQTT Broker: {{ broker }}</p>
+    <p>MQTT Port: {{ port }}</p>
+    <p>MQTT Topic: {{ topic }}</p>
+    <p>MQTT Message: {{ message }}</p>
+    <button onclick="Saludar()">on</button>
+    <button onclick="Despedir()">off</button>
+</body>
+</html>
