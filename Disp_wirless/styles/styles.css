@@ -1,0 +1,236 @@
+/* Estilos base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dispositivos */
+.device-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.device-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.device-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.75rem 0;
+}
+
+/* Switches */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #3b82f6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Banners */
+.add-device-banner,
+.manage-devices-banner {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background-color: #dbeafe;
+}
+
+.add-device-banner h2,
+.manage-devices-banner h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+.add-device-btn {
+    margin-top: 0.5rem;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s;
+}
+
+.add-device-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Administración de dispositivos */
+.devices-admin-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-device-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: white;
+}
+
+.rename-btn {
+    width: 100%;
+    background-color: #f59e0b;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.rename-btn:hover {
+    background-color: #d97706;
+}
+
+.delete-btn {
+    width: 100%;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Footer */
+.page-footer {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para tablets y desktop */
+@media (min-width: 768px) {
+    .device-box {
+        width: 12rem;
+        padding: 1.5rem;
+    }
+
+    .device-title {
+        font-size: 1.125rem;
+    }
+
+    .device-icon {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .add-device-banner h2,
+    .manage-devices-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .devices-admin-container {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .admin-device-box {
+        width: 12rem;
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .footer-links {
+        margin-top: 0;
+    }
+}
