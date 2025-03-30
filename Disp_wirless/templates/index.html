@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio de Sesion 💡💡</title>
+    <title>Inicio de Sesión 💡💡</title>
     <!-- Incluir Tailwind desde la CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Asegura que el footer se quede al fondo */
         html, body {
             height: 100%;
         }
@@ -32,7 +31,7 @@
 
         <!-- Logo -->
         <div class="flex items-center justify-center mb-8">
-            <img src="../sources/logo.png" alt="Logo CorvusSoftware" class="w-24 h-24">
+            <img src="{{ url_for('static', filename='sources/logo.png') }}" alt="Logo" class="w-24 h-24">
         </div>
 
         <!-- Formulario -->
@@ -69,10 +68,8 @@
             </ul>
         </div>
     </footer>
-    
 
+    <!-- Script externo -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-
-
-

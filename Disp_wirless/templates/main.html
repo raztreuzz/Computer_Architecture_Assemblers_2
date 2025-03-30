@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Smart Home 🏡🏡</title>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <link href="../styles/styles.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <script>
         // Función para alternar entre las imágenes de los íconos
         function toggleLight(element, imageElement) {
@@ -78,30 +81,99 @@
         </div>
 
         <!-- Banner de administración de dispositivos -->
-        <div class="manage-devices-banner">
-            <h2>Administrar Dispositivos</h2>
-        </div>
-
-        <!-- Lista de dispositivos para administración -->
-        <div class="devices-admin-container">
-            <div class="admin-device-box">
-                <p class="device-title">Living Room</p>
-                <button class="rename-btn">Cambiar Nombre</button>
-                <button class="delete-btn">Eliminar Dispositivo</button>
+            <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Dispositivos</h2>
+    
+            <!-- Fila de dispositivos -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-6 md:mb-8 w-full">
+                <!-- Dispositivos (igual que antes) -->
+                <!-- ... -->
+            </div>
+    
+            <!-- Sección dividida 60/40 -->
+            <div class="flex flex-col lg:flex-row gap-6 mb-8">
+                <!-- Columna izquierda (60%) - Administración de dispositivos -->
+                <div class="w-full lg:w-3/5">
+                    <!-- Banner de administración de dispositivos -->
+                    <div class="manage-devices-banner">
+                        <h2>Administrar Dispositivos</h2>
+                    </div>
+    
+                    <!-- Lista de dispositivos para administración -->
+                    <div class="devices-admin-container">
+                        <div class="admin-device-box">
+                            <p class="device-title">Living Room</p>
+                            <button class="rename-btn">Cambiar Nombre</button>
+                            <button class="delete-btn">Eliminar Dispositivo</button>
+                        </div>
+    
+                        <div class="admin-device-box">
+                            <p class="device-title">Kitchen</p>
+                            <button class="rename-btn">Cambiar Nombre</button>
+                            <button class="delete-btn">Eliminar Dispositivo</button>
+                        </div>
+    
+                        <div class="admin-device-box">
+                            <p class="device-title">Bedroom</p>
+                            <button class="rename-btn">Cambiar Nombre</button>
+                            <button class="delete-btn">Eliminar Dispositivo</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Columna derecha (40%) - Slides informativas -->
+                <div class="w-full lg:w-2/5">
+                    <div class="info-slider-container">
+                        <h3 class="info-slider-title">Estadísticas y Consejos</h3>
+                        
+                        <div class="info-slider">
+                            <!-- Slide 1 -->
+                            <div class="info-slide active">
+                                <div class="slide-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4>Consumo Energético</h4>
+                                <p>Tu consumo actual es un 15% menor que el mes pasado. ¡Buen trabajo!</p>
+                                <div class="slide-progress">
+                                    <div class="progress-bar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="info-slide">
+                                <div class="slide-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4>Consejo de Iluminación</h4>
+                                <p>Apaga las luces cuando no las uses para ahorrar hasta un 20% en electricidad.</p>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="info-slide">
+                                <div class="slide-icon">
+                                    <i class="fas fa-thermometer-half"></i>
+                                </div>
+                                <h4>Temperatura Ideal</h4>
+                                <p>Mantén tu termostato a 21°C para máximo confort y eficiencia energética.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Controles del slider -->
+                        <div class="slider-controls">
+                            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="admin-device-box">
-                <p class="device-title">Kitchen</p>
-                <button class="rename-btn">Cambiar Nombre</button>
-                <button class="delete-btn">Eliminar Dispositivo</button>
-            </div>
+        
 
-            <div class="admin-device-box">
-                <p class="device-title">Bedroom</p>
-                <button class="rename-btn">Cambiar Nombre</button>
-                <button class="delete-btn">Eliminar Dispositivo</button>
-            </div>
-        </div>
+        <script src="{{ url_for('static', filename='carousel.js') }}"></script>
 
     </main>
 
