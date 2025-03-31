@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home 🏡🏡</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-600 p-4 md:p-6 text-white text-center">
+        <h1 class="text-2xl md:text-4xl font-bold">Smart Home</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="container mx-auto p-4 md:p-6 flex flex-col items-center flex-grow">
+
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Dispositivos</h2>
+
+        <!-- Fila de dispositivos -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-6 md:mb-8 w-full">
+
+            <!-- Dispositivo 1 -->
+            <div class="device-box">
+                <p class="device-title">Living Room</p>
+                <img src="{{ url_for('static', filename='sources/Light_off.png') }}" alt="light" class="device-icon" id="lightimg1">
+                <label class="switch">
+                    <input type="checkbox" id="lightswitch1">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Dispositivo 2 -->
+            <div class="device-box">
+                <p class="device-title">Kitchen</p>
+                <img src="{{ url_for('static', filename='sources/Light_off.png') }}" alt="light" class="device-icon" id="lightimg2">
+                <label class="switch">
+                    <input type="checkbox" id="lightswitch2">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Dispositivo 3 -->
+            <div class="device-box">
+                <p class="device-title">Bedroom</p>
+                <img src="{{ url_for('static', filename='sources/Light_off.png') }}" alt="light" class="device-icon" id="lightimg3">
+                <label class="switch">
+                    <input type="checkbox" id="lightswitch3">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Script para la funcionalidad de luces -->
+    <script src="{{ url_for('static', filename='script_2.js') }}"></script>
+
+</body>
+</html>

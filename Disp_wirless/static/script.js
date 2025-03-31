@@ -2,20 +2,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Evita el envío predeterminado del formulario
 
-        const networkName = document.getElementById("network_name").value;
+        const ssid = document.getElementById("network_name").value;
         const password = document.getElementById("password").value;
 
         fetch("/connect", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ssid: networkName, password: password }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ssid, password }),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error en la conexión");
+            }
+            return response.json();
+        })
         .then(data => {
-            alert(data.message); // Mostrar respuesta del servidor
+            alert(data.message); 
+            window.location.href = "/HOME"; 
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+            console.error("Error:", error);
+            alert("No se pudo conectar al dispositivo.");
+        });
     });
 });
+

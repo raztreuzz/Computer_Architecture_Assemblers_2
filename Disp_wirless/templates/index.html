@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión 💡💡</title>
+    <title>Conecta tus dispositivos 💡💡</title>
     <!-- Incluir Tailwind desde la CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -26,7 +26,7 @@
         <!-- Encabezado -->
         <header class="mb-6">
             <h1 class="text-4xl font-bold text-center text-gray-800">Bienvenido a CorvusSoftware</h1>
-            <p class="text-center text-gray-600 mt-2">Conéctate a tu red WiFi y controla tus dispositivos Smart.</p>
+            <p class="text-center text-gray-600 mt-2">Conéctate y controla tus dispositivos Smart.</p>
         </header>
 
         <!-- Logo -->
@@ -37,12 +37,12 @@
         <!-- Formulario -->
         <form class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-md">
             <div class="mb-4">
-                <label for="network_name" class="block text-sm font-medium text-gray-600">Nombre de la red</label>
-                <input type="text" id="network_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" placeholder="Ej. MiRedWiFi" required />
+                <label for="network_name" class="block text-sm font-medium text-gray-600">Nombre del Dispositivo</label>
+                <input type="text" id="network_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" placeholder="Ej. RedLight" required />
             </div>
             <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-600">Contraseña</label>
-                <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" required />
+                <label for="password" class="block text-sm font-medium text-gray-600">Agrega el Numero de serie</label>
+                <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" required  placeholder=" #1567"/>
             </div>
             <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm py-2.5 mt-4 focus:outline-none">Conectar</button>
         </form>
@@ -51,7 +51,7 @@
         <div class="bg-white shadow-lg rounded-lg p-6 mt-8 mx-auto max-w-sm">
             <h2 class="text-xl font-semibold text-gray-800">Dispositivos Smart 💡</h2>
             <p class="text-sm text-gray-600 mt-2">
-                Ingresa el nombre y la clave de tu red WiFi para conectarte.
+                Ingresa el Nombre y el Numero de Serie del dispositivo ("Descuida podras cambiar el nombre en Administracion de Dispositivos si quieres").
             </p>
         </div>
     </div>

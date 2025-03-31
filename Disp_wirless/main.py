@@ -22,5 +22,14 @@ def connect():
 
     return jsonify({"message": f"Intentando conectar a {ssid}..."}), 200
 
+@app.route("/HOME")
+def home():
+    return render_template("home.html")
+
+
+@app.route('/handle_connection', methods=['GET'])
+def handle_connection():
+    return "ESP8266 conectado con éxito", 200 
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
