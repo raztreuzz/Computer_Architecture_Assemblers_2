@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conecta tus dispositivos 💡💡</title>
-    <!-- Incluir Tailwind desde la CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <style>
         html, body {
@@ -21,51 +20,55 @@
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
-    <!-- Contenedor principal -->
+   
     <div class="container mx-auto p-6 content">
-        <!-- Encabezado -->
+      
         <header class="mb-6">
             <h1 class="text-4xl font-bold text-center text-gray-800">Bienvenido a CorvusSoftware</h1>
             <p class="text-center text-gray-600 mt-2">Conéctate y controla tus dispositivos Smart.</p>
         </header>
 
-        <!-- Logo -->
+       
         <div class="flex items-center justify-center mb-8">
             <img src="{{ url_for('static', filename='sources/logo.png') }}" alt="Logo" class="w-24 h-24">
         </div>
 
-        <!-- Formulario -->
-        <form class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-md">
-            <div class="mb-4">
-                <label for="network_name" class="block text-sm font-medium text-gray-600">Nombre del Dispositivo</label>
-                <input type="text" id="network_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" placeholder="Ej. RedLight" required />
-            </div>
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-600">Agrega el Numero de serie</label>
-                <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" required  placeholder=" #1567"/>
-            </div>
-            <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm py-2.5 mt-4 focus:outline-none">Conectar</button>
-        </form>
-
-        <!-- Tarjeta -->
-        <div class="bg-white shadow-lg rounded-lg p-6 mt-8 mx-auto max-w-sm">
-            <h2 class="text-xl font-semibold text-gray-800">Dispositivos Smart 💡</h2>
-            <p class="text-sm text-gray-600 mt-2">
-                Ingresa el Nombre y el Numero de Serie del dispositivo ("Descuida podras cambiar el nombre en Administracion de Dispositivos si quieres").
-            </p>
-        </div>
+<form id="deviceForm" class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+        <label for="numero_serie" class="block text-sm font-medium text-gray-600">
+            Número de Serie (Ej: SH100, FH205, TH300)
+        </label>
+        <input type="text" id="numero_serie" name="numero_serie" 
+               pattern="[A-Za-z]{2}\d+" 
+               title="Debe comenzar con 2 letras seguidas de números"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-3 mt-1" 
+               required placeholder="SH100"/>
     </div>
+    <div id="statusMessage" class="hidden mb-4 p-3 rounded text-sm"></div>
+    <button type="submit" id="submitButton" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm py-2.5 mt-4 focus:outline-none">
+        Conectar Dispositivo
+    </button>
+</form>
+
+
+<div class="bg-white shadow-lg rounded-lg p-6 mt-8 mx-auto max-w-sm">
+    <h2 class="text-xl font-semibold text-gray-800">Registro de Dispositivos</h2>
+    <p class="text-sm text-gray-600 mt-2">
+        1. Asegúrate que tu dispositivo esté en modo configuración<br>
+        2. Ingresa el número de serie que aparece en el dispositivo<br>
+        3. El dispositivo se conectará automáticamente al validarse
+    </p>
+</div>
 
     <!-- Footer -->
     <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://Corvus_Software.com/" class="hover:underline">Corvus Corvus_Software™</a>. All Rights Reserved.</span>
-            <!-- Lista de enlaces -->
-            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                <li class="w-full sm:w-auto">
-                    <a href="#" class="hover:underline">Contact: raztreuzz1234@gmail.com</a>
-                </li>
-            </ul>
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2025 <a href="https://Corvus_Software.com/" class="hover:underline">Corvus Software™</a>. All Rights Reserved.
+            </span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">
+                Contacto: <a href="mailto:raztreuzz1234@gmail.com" class="hover:underline">raztreuzz1234@gmail.com</a>
+            </span>
         </div>
     </footer>
 
